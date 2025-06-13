@@ -38,7 +38,8 @@
     --color-contrast: #111B28;
     --color-clickable: #20A4F6;
     --color-clickable-hover: #1A8CD2;
-    --color-texthover: ##d4d8d9;
+    --color-textbase: #9db1c3;
+    --color-texthover: #ffffff;
 }
 
 @layer theme {
