@@ -10,7 +10,7 @@ class showCard extends Component
 {
 
     public $id;
-    public $genreId;
+    public $genreIds;
     public $name;
     public $rating;
     public $originalLanguage;
@@ -23,7 +23,7 @@ class showCard extends Component
      */
     public function __construct(
         $id = null,
-        $genreId = null,
+        $genreIds = [],
         $name = 'N/A',
         $rating = 0,
         $originalLanguage = 'N/A',
@@ -32,7 +32,7 @@ class showCard extends Component
         $backdrop = null
     ) {
         $this->id = $id;
-        $this->genreId = $genreId;
+        $this->genreIds = $genreIds;
         $this->name = $name;
         $this->rating = $rating;
         $this->originalLanguage = $originalLanguage;

@@ -29,5 +29,6 @@
 <body class="bg-default m-0 p-0 w-full h-full font-maven text-white text-xl">
     <x-nav/>
     {{$slot}}
+    <x-footer/>
 </body>
 </html>

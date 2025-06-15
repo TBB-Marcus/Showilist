@@ -29,6 +29,7 @@ class TMDBController extends Controller
             ]
         ]);
         $shows = json_decode($response->getBody());
+        $shows = $shows->results;
         return view('index', ['shows' => $shows]);
     }
 
