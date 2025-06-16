@@ -24,7 +24,6 @@ class TMDBController extends Controller
                 'sort_by' => 'popularity.desc',
                 'language' => 'en-US',
                 'without_genres' => '10764,10767,10763',
-                'first_air_date.gte' => '2008-01-01',
                 'page' => 1,
             ]
         ]);
