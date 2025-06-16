@@ -5,7 +5,7 @@
 <x-app-layout title="">
 
     @if (!Auth::check())
-        <div class="p-50 grid grid-cols-2 grid-flow-row place-items-center gap-50">
+        <div class="m-50 grid grid-flow-row place-items-center gap-50 sm:grid-cols-1 lg:grid-cols-2">
             <div>
                 <h1 class="font-bold text-3xl"><i class="fa-solid fa-list-check text-clickable mr-2"></i> Track what you watch</h1>
                 <p class="pl-1">Whether you are binging, or spacing it out, our watchlist will make it easy to keep everything organized.</p>
