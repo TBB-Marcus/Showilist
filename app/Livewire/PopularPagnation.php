@@ -39,6 +39,7 @@ class PopularPagnation extends Component
     {
         $this->page++;
         $this->loadShows();
+        $this->dispatch('shows-loaded');
     }
 
     public function previousPage()
@@ -46,6 +47,7 @@ class PopularPagnation extends Component
         if ($this->page > 1) {
             $this->page--;
             $this->loadShows();
+            $this->dispatch('shows-loaded');
         }
     }
 
@@ -67,7 +69,6 @@ class PopularPagnation extends Component
         ]);
         $shows = json_decode($response->getBody());
         $this->shows = $shows->results;
-        $this->dispatch('shows-loaded');
     }
 
     public function render()
