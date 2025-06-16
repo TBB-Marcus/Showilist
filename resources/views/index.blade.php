@@ -15,7 +15,7 @@
                 <p>Rate each show after watching to keep track of what you loved- or didn't. Your personal ratings help you look back at your favorites</p>
             </div>
             <div>
-                <h1 class="font-bold text-3xl"><i class="fa-solid fa-circle-notch text-gray-400 mr-2"></i> Simplicity is key</h1>
+                <h1 class="font-bold text-3xl"><i class="fa-solid fa-lightbulb text-gray-400 mr-2"></i> Simplicity is key</h1>
                 <p>Showilist focuses on a minimalist approach to tracking your shows. No more frustrating cluttered UIs that put a barrier between you, and your next watch</p>
             </div>
             <div>
