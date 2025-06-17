@@ -24,7 +24,7 @@
         </div>
     @endif
 
-    <div class="max-w-7xl mx-auto px-4 pt-10 min-h-72">
+    <div class="max-w-7xl mx-auto px-4 pt-10 min-h-72 pb-10">
         <h1 class="text-3xl font-bold pb-5">Popular now:</h1>
         @livewire('popular-pagnation')
     </div>
