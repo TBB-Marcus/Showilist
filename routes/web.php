@@ -18,8 +18,14 @@ Route::get('/auth', function() {
 
 Route::post('/register', [\App\Http\Controllers\UserController::class, 'register'])->name('register');
 Route::post('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('login');
-Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout');
+Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
-// *************************************
+// ***********************************
+
+Route::get('/show/{id}', [TMDBController::class, 'getShowDetails'])->name('show');
+Route::get('/search', [TMDBController::class, 'search'])->name('search');
+
+
+
 
 require __DIR__.'/auth.php';
