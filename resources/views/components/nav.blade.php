@@ -8,8 +8,8 @@
             <a href="" class="text-textbase hover:text-white transition-all cursor-pointer hover:scale-105">About Us</a>
         </div>
         <div class="flex gap-5 justify-self-end pr-5">
-            <a href="" class="p-2 text-textbase hover:text-white transition all cursor-pointer hover:scale-105">Login</a>
-            <a href="" class="p-2 p-md-5 rounded-xl hover:bg-clickable bg-clickable-hover text-white transition-all hover:scale-105">Sign Up</a>
+            <a href="/auth?login" class="p-2 text-textbase hover:text-white transition all cursor-pointer hover:scale-105">Login</a>
+            <a href="/auth?register" class="p-2 p-md-5 rounded-xl hover:bg-clickable bg-clickable-hover text-white transition-all hover:scale-105">Sign Up</a>
         </div>
     </div>
 </header>

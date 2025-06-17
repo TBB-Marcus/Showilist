@@ -36,6 +36,7 @@
 @theme {
     --color-default: #08121E;
     --color-contrast: #111B28;
+    --color-contrast-darker: #080d14;
     --color-clickable: #20A4F6;
     --color-clickable-hover: #1A8CD2;
     --color-textbase: #9db1c3;
