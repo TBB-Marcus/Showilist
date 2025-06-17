@@ -18,17 +18,11 @@ class PopularPagnation extends Component
     {
         $client = new Client();
 
-        $response = $client->get(env('TMDB_URL') . 'discover/tv', [
+        $response = $client->get(env('TMDB_URL') . 'trending/tv/week', [
             'headers' => [
                 'Accept' => 'application/json',
                 'Authorization' => 'Bearer ' . env('TMDB_READ_ACCESS_TOKEN')
             ],
-            'query' => [
-                'sort_by' => 'popularity.desc',
-                'language' => 'en-US',
-                'without_genres' => '10764,10767,10763',
-                'page' => 1,
-            ]
         ]);
         $shows = json_decode($response->getBody());
         $shows = $shows->results;
@@ -55,15 +49,12 @@ class PopularPagnation extends Component
     {
         $client = new Client();
 
-        $response = $client->get(env('TMDB_URL') . 'discover/tv', [
+        $response = $client->get(env('TMDB_URL') . 'trending/tv/week', [
             'headers' => [
                 'Accept' => 'application/json',
                 'Authorization' => 'Bearer ' . env('TMDB_READ_ACCESS_TOKEN')
             ],
             'query' => [
-                'sort_by' => 'popularity.desc',
-                'language' => 'en-US',
-                'without_genres' => '10764,10767,10763',
                 'page' => $this->page,
             ]
         ]);
