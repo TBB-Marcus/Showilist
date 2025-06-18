@@ -17,9 +17,6 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/33e081594a.js" crossorigin="anonymous"></script>
 
-    <!-- AlpineJS -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
     <!-- Styles -->
     @vite('resources/css/app.css')
 

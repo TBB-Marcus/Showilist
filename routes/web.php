@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TMDBController;
 use App\Http\Controllers\WatchlistController;
 
-Route::get('/', [TMDBController::class, 'getTopShows'])->name('home');
-
-
+Route::get('/', [function() {
+    return view('index');
+}])->name('home');
 
 // **** ROUTES FOR AUTHENTICATION ****
 
@@ -31,8 +31,9 @@ Route::get('/search', function() {
 // **** ROUTES PROTECTED BY AUTHENTICATION ****
 Route::middleware('auth')->group(function() {
 
-    Route::get('/watchlist', [WatchlistController::class, 'getWatchlist'])->name('watchlist');
-    Route::post('/watchlist/create/{id}', [WatchlistController::class, 'createFavorite'])->name('watchlist.create');
+    Route::get('/watchlist', function() {
+    return view('watchlist');
+    })->name('watchlist');
 
 });
 // ********************************************

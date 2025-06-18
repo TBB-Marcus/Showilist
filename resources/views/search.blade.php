@@ -1,4 +1,4 @@
-<x-app-layout title="">
+<x-app-layout title="Search">
     <div class="w-full text-textbase">
         @livewire('search')
     </div>

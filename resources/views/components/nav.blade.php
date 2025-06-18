@@ -1,4 +1,4 @@
-<header class="bg-contrast p-5 shadow-xl" x-data="{ open: false }">
+<header class="bg-contrast p-5 shadow-xl">
     <div class="grid grid-cols-3 place-items-center">
         <a href="{{ route('home') }}" class="text-white text-2xl font-bold justify-self-start pl-2 hover:scale-105 transition-all">
             <span class="text-clickable">SHOW</span>ilist
@@ -23,15 +23,12 @@
             @endif
         </div>
 
-        <!-- Fikk Hjelp av ChatGPT for å lage hamburgermeny -->
-        <button @click="open = !open" class="md:hidden col-start-3 justify-self-end text-white pr-2">
+        <button id="hamburgerBtn" class="md:hidden col-start-3 justify-self-end text-white pr-2" aria-label="Open menu">
             <i class="fa-solid fa-bars text-2xl"></i>
         </button>
     </div>
 
-
-    <!-- Fikk Hjelp av ChatGPT for å lage hamburgermeny -->
-    <div x-show="open" x-transition class="md:hidden mt-4 flex flex-col gap-3 text-center">
+    <div id="mobileMenu" class="hidden md:hidden mt-4 flex flex-col gap-3 text-center">
         <a href="/search" class="text-textbase hover:text-white transition-all">Search</a>
         @if(Auth::check())
             <a href="/watchlist" class="text-textbase hover:text-white transition-all">My List</a>
@@ -47,4 +44,14 @@
             <a href="/logout" class="text-textbase hover:text-white transition-all">Log out</a>
         @endif
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('hamburgerBtn');
+            const menu = document.getElementById('mobileMenu');
+            btn.addEventListener('click', function () {
+                menu.classList.toggle('hidden');
+            });
+        });
+    </script>
 </header>

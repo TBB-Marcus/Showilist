@@ -1,34 +1,38 @@
-<x-app-layout title="">
-
-
-
-<div class="w-screen grid grid-cols-1 grid-rows-1 items-center justify-items-center">
-    <div class="flex items-center justify-center min-h-screen">
-        <div class="w-130 h-210 mt-20 rounded-xl bg-contrast flex flex-col justify-between items-center">
+<x-app-layout title="Auth">
+    <div class="mt-50 flex items-center justify-center px-4">
+        <div class="w-full max-w-md bg-contrast rounded-xl shadow-xl p-8">
+            @if ($errors->any())
+                <div class="mb-4">
+                    @foreach ($errors->all() as $error)
+                        <p class="text-red-500 text-center">{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
             @if (request()->has('register'))
-                <h1 class="text-textbase font-bold text-center mt-20 text-3xl">Sign up to SHOWilist</h1>
-                <form method="POST" action="{{ route('register') }}" class="flex flex-col items-center justify-center flex-1">
+                <h1 class="text-textbase font-bold text-center text-3xl mb-8">Sign up for SHOWilist</h1>
+                <form method="POST" action="{{ route('register') }}" class="space-y-5">
                     @csrf
-                    <input type="text" name="username" placeholder="Username" class="w-100 h-12 mt-20 bg-default pl-5 rounded-md">
-                    <input type="text" name="email" placeholder="Email" class="w-100 h-12 mt-5 bg-default pl-5 rounded-md">
-                    <input type="password" name="password" placeholder="Password" class="w-100 h-12 mt-5 bg-default pl-5 rounded-md">
-                    <input type="password" name="password_confirmation" placeholder="Confirm Password" class="w-100 h-12 mt-5 bg-default pl-5 rounded-md">
-                    <button type="submit" value="info" class="w-40 h-15 rounded-full mt-40 bg-gradient-to-r from-sky-400 to-blue-500 hover:scale-110 transition-all cursor-pointer shadow-2xl">Register!</button>
+                    <input type="text" name="username" placeholder="Username" class="w-full h-12 bg-default pl-5 rounded-md">
+                    <input type="text" name="email" placeholder="Email" class="w-full h-12 bg-default pl-5 rounded-md">
+                    <input type="password" name="password" placeholder="Password" class="w-full h-12 bg-default pl-5 rounded-md">
+                    <input type="password" name="password_confirmation" placeholder="Confirm Password" class="w-full h-12 bg-default pl-5 rounded-md">
+                    <button type="submit" class="w-full h-12 rounded-full bg-gradient-to-r from-sky-400 to-blue-500 hover:scale-105 transition-transform shadow-lg text-white font-semibold">Register!</button>
                 </form>
-                <a href="/auth?login" class="text-center w-full mb-8 text-textbase/50 hover:text-texthover cursor-pointer">Already have a user? <u>Log In</u></a>
+                <a href="/auth?login" class="block text-center mt-6 text-textbase/50 hover:text-texthover">Already have a user? <u>Log In</u></a>
             @else
-                <h1 class="text-textbase font-bold text-center mt-20 text-3xl">Log in to SHOWilist</h1>
-                <form method="POST" action="{{ route('login') }}" class="flex flex-col items-center justify-center flex-1">
+                <h1 class="text-textbase font-bold text-center text-3xl mb-8">Log in to SHOWilist</h1>
+                <form method="POST" action="{{ route('login') }}" class="space-y-5">
                     @csrf
-                    <input type="text" name="email" placeholder="Email" class="w-100 h-12 mt-20 bg-default pl-5 rounded-md">
-                    <input type="password" name="password" placeholder="Password" class="w-100 h-12 mt-5 bg-default pl-5 rounded-md">
-                    <span class="mt-5"><input type="checkbox" name="remember"><label class="text-textbase text-sm pl-2">Remember me</label></span>
-                    <button type="submit" class="w-40 h-15 rounded-full mt-40 bg-gradient-to-r from-sky-400 to-blue-500 hover:scale-110 transition-all cursor-pointer shadow-2xl">Log in!</button>
+                    <input type="text" name="email" placeholder="Email" class="w-full h-12 bg-default pl-5 rounded-md">
+                    <input type="password" name="password" placeholder="Password" class="w-full h-12 bg-default pl-5 rounded-md">
+                    <div class="flex items-center">
+                        <input type="checkbox" name="remember" class="mr-2">
+                        <label class="text-textbase text-sm">Remember me</label>
+                    </div>
+                    <button type="submit" class="w-full h-12 rounded-full bg-gradient-to-r from-sky-400 to-blue-500 hover:scale-105 transition-transform shadow-lg text-white font-semibold">Log in!</button>
                 </form>
-                <a href="/auth?register" class="text-center w-full mb-8 text-textbase/50 hover:text-texthover cursor-pointer">Don't have a user? <u>Register</u></a>
+                <a href="/auth?register" class="block text-center mt-6 text-textbase/50 hover:text-texthover">Don't have a user? <u>Register</u></a>
             @endif
         </div>
     </div>
-</div>
-
 </x-app-layout>
