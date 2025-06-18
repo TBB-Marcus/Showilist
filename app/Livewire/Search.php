@@ -25,6 +25,9 @@ class Search extends Component
                 'Accept' => 'application/json',
                 'Authorization' => 'Bearer ' . env('TMDB_READ_ACCESS_TOKEN')
             ],
+            'query' => [
+                'page' => $this->page,
+            ]
         ]);
         $shows = json_decode($response->getBody());
         $shows = $shows->results;
@@ -33,6 +36,7 @@ class Search extends Component
 
     public function updatedQuery($value)
     {
+
         $this->query = $value;
 
         if (strlen($this->query) <= 0) {
@@ -40,6 +44,12 @@ class Search extends Component
             return;
         }
 
+        $this->loadShows();
+    }
+
+
+    public function loadShows()
+    {
         $client = new Client();
 
         $response = $client->get(env('TMDB_URL') . 'search/tv', [
@@ -56,6 +66,22 @@ class Search extends Component
         $shows = json_decode($response->getBody());
         $shows = $shows->results;
         $this->shows = $shows;
+    }
+
+    public function nextPage()
+    {
+        $this->page++;
+        $this->updatedQuery($this->query);
+        $this->dispatch('shows-loaded');
+    }
+
+    public function previousPage()
+    {
+        if ($this->page > 1) {
+            $this->page--;
+            $this->updatedQuery($this->query);
+            $this->dispatch('shows-loaded');
+        }
     }
 
 

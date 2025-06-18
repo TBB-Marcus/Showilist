@@ -1,4 +1,13 @@
-<div>
+<div
+    id="shows-container"
+    x-data
+    x-on:shows-loaded.window="
+        const el = document.getElementById('shows-container');
+        if (el) {
+            const y = el.getBoundingClientRect().top + window.scrollY - 200;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    ">
     <div class="h-35 grid grid-flow-row grid-cols-2 items-center ml-20 mt-5">
         <form class="grid grid-flow-row grid-cols-2 gap-30">
             <div>
@@ -21,4 +30,15 @@
             />
         @endforeach
     </div>
+    @if (strlen($query) >= 1)
+        <div class="flex justify-end gap-5 mt-10 mr-20">
+            @if($page <= 1)
+                <button class="text-textbase/20" disabled>Last page</button>
+            @else
+                <button class="text-textbase hover:text-texthover hover:scale-102 transition-all cursor-pointer" id="lastButton" wire:click='previousPage'>Last page</button>
+            @endif
+            <p>{{$page}}</p>
+            <button class="text-textbase hover:text-texthover hover:scale-102 transition-all cursor-pointer" id="nextButton" wire:click='nextPage'>Next page</button>
+        </div>
+    @endif
 </div>
