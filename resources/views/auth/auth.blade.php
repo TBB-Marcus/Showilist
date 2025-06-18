@@ -23,7 +23,7 @@
                     <input type="text" name="email" placeholder="Email" class="w-100 h-12 mt-20 bg-default pl-5 rounded-md">
                     <input type="password" name="password" placeholder="Password" class="w-100 h-12 mt-5 bg-default pl-5 rounded-md">
                     <span class="mt-5"><input type="checkbox" name="remember"><label class="text-textbase text-sm pl-2">Remember me</label></span>
-                    <button type="submit" class="w-40 h-15 rounded-full mt-40 bg-gradient-to-r from-sky-400 to-blue-500 hover:scale-110 transition-all cursor-pointer shadow-2xl">Register!</button>
+                    <button type="submit" class="w-40 h-15 rounded-full mt-40 bg-gradient-to-r from-sky-400 to-blue-500 hover:scale-110 transition-all cursor-pointer shadow-2xl">Log in!</button>
                 </form>
                 <a href="/auth?register" class="text-center w-full mb-8 text-textbase/50 hover:text-texthover cursor-pointer">Don't have a user? <u>Register</u></a>
             @endif

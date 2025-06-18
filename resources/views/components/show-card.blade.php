@@ -25,5 +25,5 @@
         </div>
 
         <p class="transition-all pl-0.5 text-nowrap truncate mt-2">{{$name}}</p>
-    </div onclick="window.location.href='{{  route('home', ['id' => $id]) }}'">
+    </div>
 </a>

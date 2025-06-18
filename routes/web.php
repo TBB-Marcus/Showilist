@@ -23,7 +23,9 @@ Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->
 // ***********************************
 
 Route::get('/show/{id}', [TMDBController::class, 'getShowDetails'])->name('show');
-Route::get('/search', [TMDBController::class, 'search'])->name('search');
+Route::get('/search', function() {
+    return view('search');
+})->name('search');
 
 
 

@@ -63,7 +63,10 @@
                     </iframe>
                 @else
                     <p>Sorry! we couldn't find a trailer for this show.</p>
-                    <p>Take this cat instead: <b>ᓚᘏᗢ</b></p>
+                    @if (isset($show->homepage))
+                        <p>You could try visiting the show's <a href="{{ $show->homepage }}"><u>homepage</u></a></p>
+                    @endif
+                    <p>For now, take this cat instead: <b>ᓚᘏᗢ</b></p>
                 @endif
             </div>
         </div>

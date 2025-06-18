@@ -29,7 +29,6 @@ class TMDBController extends Controller
         return view('index', ['shows' => $shows]);
     }
 
-
     /**
      * Get details of a specific show.
      * Used for the individual show pages.
