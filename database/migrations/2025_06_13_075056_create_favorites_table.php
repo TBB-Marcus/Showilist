@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('status')->default('planning');
             $table->string('show_id');
             $table->timestamps();
             $table->unique(['user_id', 'show_id']);

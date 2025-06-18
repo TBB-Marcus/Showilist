@@ -18,6 +18,7 @@ class Search extends Component
      */
     public function mount()
     {
+        $this->page = 1;
         $client = new Client();
 
         $response = $client->get(env('TMDB_URL') . 'trending/tv/week', [

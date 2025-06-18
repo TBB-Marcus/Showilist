@@ -34,16 +34,19 @@
         </div>
         <div class="flex w-full gap-8 px-z8 mt-10 pl-10 min-h-1/5">
             <div class="w-48"></div>
-            <div class="flex-1">
+            <div class="flex-1 flex-col min-h-50">
                 @if (isset($show->homepage))
                     <a href="{{ $show->homepage }}" class="text-3xl font-bold hover:text-texthover transition-all"><u>{{ $show->name }}</u><span class="pl-4">{{number_format($show->vote_average, 1)}} <i class="fa-solid fa-star text-yellow-500"></i></span></a>
                 @else
                     <p class="text-3xl font-bold hover:text-texthover transition-all">{{ $show->name }}<span class="pl-4">{{number_format($show->vote_average, 1)}} <i class="fa-solid fa-star text-yellow-500"></i></span></p>
                 @endif
                 <p class="text-base mb-4 w-3/4 hover:text-texthover transition-all mt-3">{{ $show->overview }}</p>
+                @if (Auth::check())
+                    @livewire('watchlist-button', ['showId' => $show->id, 'show' => $show])
+                @endif
             </div>
         </div>
-        <div class="bg-contrast-darker grid grid-cols-2 p-20 mt-20">
+        <div class="bg-contrast-darker grid grid-cols-2 p-20 mt-10">
             <div class="pl-5 w-2/3 h-full pt-5">
                 <p class="bg-default rounded-xl border-1 border-textbase p-2">Status: <b>{{ $show->status }}</b></p>
                 <p class="bg-default rounded-xl border-1 border-textbase p-2 mt-2">Release Date: <b>{{ formatAirDate($show->first_air_date) }}</b><br>Last Aired: <b>{{ formatAirDate($show->last_air_date) }}</b></p>

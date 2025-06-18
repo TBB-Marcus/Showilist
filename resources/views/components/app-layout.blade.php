@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,9 +26,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
-<body class="bg-default m-0 p-0 w-full h-full font-maven text-white text-xl">
+<body class="bg-default font-maven text-white text-xl flex flex-col min-h-screen overflow-x-hidden" >
     <x-nav/>
-    {{$slot}}
+    <main class="flex-1">
+        {{ $slot }}
+    </main>
     <x-footer/>
 </body>
 </html>

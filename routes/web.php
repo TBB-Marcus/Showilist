@@ -5,6 +5,7 @@ use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TMDBController;
+use App\Http\Controllers\WatchlistController;
 
 Route::get('/', [TMDBController::class, 'getTopShows'])->name('home');
 
@@ -27,6 +28,14 @@ Route::get('/search', function() {
     return view('search');
 })->name('search');
 
+// **** ROUTES PROTECTED BY AUTHENTICATION ****
+Route::middleware('auth')->group(function() {
+
+    Route::get('/watchlist', [WatchlistController::class, 'getWatchlist'])->name('watchlist');
+    Route::post('/watchlist/create/{id}', [WatchlistController::class, 'createFavorite'])->name('watchlist.create');
+
+});
+// ********************************************
 
 
 
