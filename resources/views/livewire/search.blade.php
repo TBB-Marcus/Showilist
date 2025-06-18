@@ -1,4 +1,4 @@
-<div class="h-full">
+<div>
     <div class="h-35 grid grid-flow-row grid-cols-2 items-center ml-20 mt-5">
         <form class="grid grid-flow-row grid-cols-2 gap-30">
             <div>
@@ -7,7 +7,7 @@
             </div>
         </form>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 w-full px-20 mt-5 h-screen">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 w-full px-20 mt-5">
         @foreach($shows as $show)
             <x-show-card
                 :id="$show->id"
