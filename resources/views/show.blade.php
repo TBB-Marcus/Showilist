@@ -18,7 +18,7 @@
     }
 @endphp
 
-<x-app-layout title="">
+<x-app-layout title="{{ $show->name }}">
     <div class="relative text-textbase">
     <img src="https://image.tmdb.org/t/p/w1280{{ $show->backdrop_path }}" alt="{{ $show->name }}" class="w-full h-96 object-cover">
     <div class="absolute top-0 left-0 w-full h-96">
