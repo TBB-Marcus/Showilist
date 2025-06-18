@@ -2,10 +2,10 @@
     dd($shows);
 @endphp --}}
 
-<x-app-layout title="">
+<x-app-layout title="Home">
 
     @if (!Auth::check())
-        <div class="m-50 grid grid-flow-row place-items-center gap-50 sm:grid-cols-1 lg:grid-cols-2">
+        <div class="mx-4 my-12 lg:my-64 sm:my-12 sm:mx-8 lg:mx-20 grid grid-flow-row place-items-center gap-52 sm:grid-cols-1 lg:grid-cols-2">
             <div>
                 <h1 class="font-bold text-3xl"><i class="fa-solid fa-list-check text-clickable mr-2"></i> Track what you watch</h1>
                 <p class="pl-1">Whether you are binging, or taking your time, our watchlist will make it easy to keep everything organized.</p>

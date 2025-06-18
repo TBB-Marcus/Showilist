@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>{{$title}}{{config('app.name')}}</title>
+    <title>{{$title}} - {{config('app.name')}}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
@@ -17,6 +17,8 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/33e081594a.js" crossorigin="anonymous"></script>
 
+    <!-- AlpineJS -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Styles -->
     @vite('resources/css/app.css')
