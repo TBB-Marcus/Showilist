@@ -26,7 +26,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
-<body class="bg-default font-maven text-white text-xl flex flex-col min-h-screen overflow-x-hidden" >
+<body class="bg-default font-maven text-white text-xl flex flex-col min-h-screen" >
     <x-nav/>
     <main class="flex-1">
         {{ $slot }}

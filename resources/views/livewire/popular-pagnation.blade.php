@@ -1,5 +1,5 @@
 <div
-    class="w-full h-full min-h-200"
+    class=""
     id="shows-container"
     x-data
     x-on:shows-loaded.window="
