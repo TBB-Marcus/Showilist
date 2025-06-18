@@ -43,6 +43,7 @@
                 <p class="text-base mb-4 w-3/4 hover:text-texthover transition-all mt-3">{{ $show->overview }}</p>
                 @if (Auth::check())
                     @livewire('watchlist-button', ['showId' => $show->id, 'show' => $show])
+                    @livewire('rating', ['showId' => $show->id])
                 @endif
             </div>
         </div>
