@@ -35,6 +35,11 @@ class Search extends Component
         $this->shows = $shows;
     }
 
+    /**
+     * Updates the query and fetches loadshows based on the new query.
+     * This method automatically triggers when the user types in the search input marked with wire:model="query".
+     * @param string $value query
+     */
     public function updatedQuery($value)
     {
 
@@ -48,7 +53,10 @@ class Search extends Component
         $this->loadShows();
     }
 
-
+    /**
+     * Fetches shows from the TMDB API based on the current query and page.
+     * This method is called when the user searches for a show.
+     */
     public function loadShows()
     {
         $client = new Client();

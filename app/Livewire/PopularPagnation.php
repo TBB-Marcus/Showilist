@@ -13,6 +13,7 @@ class PopularPagnation extends Component
 
     /**
      * Mount the component with initial data.
+     * This being page 1 of the trending TV shows.
      */
     public function mount()
     {
@@ -29,6 +30,9 @@ class PopularPagnation extends Component
         $this->shows = $shows;
     }
 
+    /**
+     * Load the next page of shows
+     */
     public function nextPage()
     {
         $this->page++;
@@ -36,6 +40,11 @@ class PopularPagnation extends Component
         $this->dispatch('shows-loaded');
     }
 
+    /**
+     * Load the previous page of shows
+     * Only decrements the page if it is greater than 1
+     * To prevent going to a non-existent page.
+     */
     public function previousPage()
     {
         if ($this->page > 1) {
@@ -45,6 +54,9 @@ class PopularPagnation extends Component
         }
     }
 
+    /**
+     * Load shows from the TMDB API based on the current page.
+     */
     public function loadShows()
     {
         $client = new Client();

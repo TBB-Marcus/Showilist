@@ -13,6 +13,11 @@ class Statussort extends Component
     public $shows;
     public $status = 'all';
 
+    /**
+     * Mount the component with initial data.
+     * Retreieves users favorite shows by ID and fetches the corresponding shows from the database
+     * The database acts like a cache for the shows because there is no api endpoint to get shows in bulk by ID
+     */
     public function mount()
     {
         $favoriteShowIds = Favorite::where('user_id', Auth::id())
@@ -23,6 +28,10 @@ class Statussort extends Component
         $this->shows = Show::whereIn('show_id', $favoriteShowIds)->get();
     }
 
+    /**
+     * Only retrieves the shows that match the given status
+     * @param string $status the status to filter by
+     */
     public function sortByStatus($status)
     {
         $favoriteShowIds = Favorite::where('user_id', Auth::id())
@@ -33,6 +42,11 @@ class Statussort extends Component
         $this->shows = Show::whereIn('show_id', $favoriteShowIds)->get();
     }
 
+    /**
+     * Updates the status and retrieves the shows that match the given status
+     * If the status is 'all', it retrieves all shows
+     * @param string $value the new status to filter by
+     */
     public function updatedStatus($value)
     {
         $this->status = $value;
