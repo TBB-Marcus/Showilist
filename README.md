@@ -19,7 +19,7 @@ The goal for this project was to build a simple and responsive way to manage wha
 ### **Clone the repo**
 ```bash
 git clone https://github.com/TBB-Marcus/Showilist.git
-cd showilist
+cd Showilist
 ```
 
 ### **Install PHP & JavaScript dependencies**
