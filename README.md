@@ -37,7 +37,7 @@ You also need to do the common Laravel things like setting up your database and 
 
 ### **Generate an application key**
 ```bash
-php artisan generate
+php artisan key:generate
 ```
 
 ### **Run database migrations**
