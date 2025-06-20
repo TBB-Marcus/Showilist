@@ -72,6 +72,10 @@ What can showilist do?
 - Find new shows to watch throught he embedded rating from TMDB letting you know whats good
 <br>
 
+## Custom Service:
+**Genre Service**
+The Genre App Service dynamically fetches all the genre translations for TV shows 
+
 # Links
 - Project homepage: https://github.com/TBB-Marcus/Showilist
 - Clone link: https://github.com/TBB-Marcus/Showilist.git
