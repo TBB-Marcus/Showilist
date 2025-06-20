@@ -9,6 +9,11 @@ class GenreService
 {
     protected $cacheKey = 'tmdb_genres';
 
+    /**
+     * Get all TV genres from TMDB and caches them for 7 days.
+     * Returns an associative array with genre IDs as keys and names as values.
+     * @return array
+     */
     public function getGenres()
     {
         return Cache::remember($this->cacheKey, now()->addDays(7), function () {
@@ -28,12 +33,24 @@ class GenreService
         });
     }
 
+    /**
+     * Get a single genre name by ID.
+     * Returns 'Unknown' if the ID does not exist.
+     * @param int $id
+     * @return string
+     */
     public function getGenreName($id)
     {
         $genres = $this->getGenres();
         return $genres[$id] ?? 'Unknown';
     }
 
+    /**
+     * Get genre names for an array of genre IDs.
+     * Returns an array of genre names, with 'Unknown' for any IDs that do not exist.
+     * @param array $ids
+     * @return array
+     */
     public function getGenreNames(array $ids)
     {
         $genres = $this->getGenres();
