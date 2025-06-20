@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    /**
+     * Register a new user
+     * Requires username, email, password, and password confirmation.
+     * Validates the input and creates a new user in the database.
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function register(Request $request) {
         $request->validate([
             'username' => ['required', 'unique:users,username', 'string', 'min:3', 'max:32'],
@@ -26,6 +34,13 @@ class UserController extends Controller
         return redirect('/auth?login')->with('message', 'Registration successful, you can now log in.');
     }
 
+    /**
+     * Log in a user
+     * Requires email and password.
+     * Validates the input and attempts to log in the user.
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function login(Request $request) {
         $validated = $request->validate([
             'email' => ['required', 'email'],
@@ -41,6 +56,11 @@ class UserController extends Controller
         ])->onlyInput('email');
     }
 
+    /**
+     * Log out the user
+     * Destroys the session and redirects to the home page.
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function logout() {
         Auth::logout();
         return redirect('/')
